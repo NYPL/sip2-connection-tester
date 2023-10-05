@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Resources:
+  Sip2ConnectionTester:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: sip2-connection-tester.handler
+      Runtime: nodejs18.x
+      Timeout: 30
+      Environment:
+        Variables:
+          SIP2_HOSTNAME: nypl-sierra-test.nypl.org
+          IS_LOCAL: true
+      Layers:
+      - !Ref LibForPhp7Layer
+  LibForPhp7Layer:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: lib-for-node10-wrapped-php7
+      Description:
+      ContentUri: node_modules/lib-for-node10-wrapped-php7-lambda-layer/
+      CompatibleRuntimes:
+      - nodejs10
+      LicenseInfo: 'MIT'
+      RetentionPolicy: Retain

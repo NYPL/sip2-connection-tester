@@ -1,0 +1,17 @@
+{
+  "name": "sip2-connection-tester",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sip2-connection-tester.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "lib-for-node10-wrapped-php7-lambda-layer": "github:NYPL/lib-for-node10-wrapped-php7-lambda-layer#main"
+  }
+}
